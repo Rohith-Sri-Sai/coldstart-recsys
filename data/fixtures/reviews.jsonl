@@ -1,0 +1,6 @@
+{"user_id":"u1","parent_asin":"p1","timestamp":1600000000000,"rating":5,"text":"works well"}
+{"user_id":"u1","parent_asin":"p1","timestamp":1600000000000,"rating":5,"text":"works well"}
+{"user_id":"u2","parent_asin":"p1","timestamp":1600000100000,"rating":4,"text":"ok"}
+{"user_id":"u1","parent_asin":"p2","timestamp":1600001000000,"rating":4,"text":"nice"}
+{"user_id":"u2","parent_asin":"p4","timestamp":1600001800000,"rating":5,"text":"light"}
+{"user_id":"","parent_asin":"p3","timestamp":1600001000000,"rating":5}

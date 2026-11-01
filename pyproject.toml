@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "coldstart-recsys"
+version = "0.6.0"
+description = "Cold-start recommendation baselines and reproducible evaluation"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.3"]
+[project.optional-dependencies]
+graph = ["torch>=2.2"]
+[project.scripts]
+recsys-ingest = "recsys.ingest:main"
+recsys-preprocess = "recsys.preprocess:main"
+recsys-split = "recsys.split:main"
+recsys-evaluate = "recsys.evaluate:main"
+recsys-tune = "recsys.tune:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
