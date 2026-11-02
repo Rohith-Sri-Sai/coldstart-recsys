@@ -1,26 +1,15 @@
 stages:
-  ingest:
+  preprocess:
     cmd: >-
-      recsys-ingest
-      --reviews data/fixtures/reviews.jsonl
-      --products data/fixtures/products.jsonl
-      --output artifacts/ingestion
+      recsys-preprocess
+      --reviews data/raw/All_Beauty.jsonl.gz
+      --products data/raw/meta_All_Beauty.jsonl.gz
+      --output artifacts/real/ingestion
     deps:
-      - data/fixtures/reviews.jsonl
-      - data/fixtures/products.jsonl
-      - src/recsys
+      - data/raw/All_Beauty.jsonl.gz
+      - data/raw/meta_All_Beauty.jsonl.gz
+      - src/recsys/ingest.py
+      - src/recsys/preprocess.py
     outs:
-      - artifacts/ingestion
+      - artifacts/real/ingestion
 
-  split:
-    cmd: >-
-      recsys-split
-      --ingestion artifacts/ingestion
-      --output artifacts/splits
-      --train-end-ms 1600000500000
-      --dev-end-ms 1600001500000
-    deps:
-      - artifacts/ingestion
-      - src/recsys
-    outs:
-      - artifacts/splits
